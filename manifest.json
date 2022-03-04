@@ -1,0 +1,17 @@
+{
+  "name": "Price Tracker TR",
+  "version": "0.01",
+  "description": "Keep track the prices of products on hepsiburada, trendyol and n11.",
+  "browser_action": {
+    "default_title": "Price Tracker TR",
+    "default_popup": "popout.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "manifest_version": 2
+}
