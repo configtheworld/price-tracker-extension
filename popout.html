@@ -6,21 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    body{
+        width: 250px;
+        border-radius: 10%;
+        background-color: rgb(252, 120, 45);
+    }
+</style>
 <body>
-    <h1>hello mr officer</h1>
-    <div class="commands-list">
-        <div class="command-item index-0" >
-            <input class="value-1" placeholder="https://..."/>
-            <select>
-                <option class="trendyol">trendyol</option>
-                <option class="hepsiburada">hepsiburada</option>
-                <option class="n11">n11</option>
-            </select>
+    <h1>Price Tracker</h1>
+    <div class="product-list">
+        <div class="product-item" style="display: flex;">
+            <img src="product_example.jpg" style="height: 60px;width: 60px;border-radius: 50%;object-fit:cover ;border:3px solid #444; margin-top: 10px;" alt="product-img"/>
+            <div style="text-align: center; width: 150px;">
+                <h3>Product A</h3>
+                <h2>250$</h2>
+            </div>
         </div>
     </div>
     <div class="action-buttons">
-        <button class="new-command">Ürün Ekle</button>
-        <button class="run-command">Ara</button>
+        <button class="run-command">Add Current Page</button>
     </div>
     <script src="popout.js"></script>
 </body>
