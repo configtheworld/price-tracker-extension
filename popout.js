@@ -46,7 +46,9 @@ function decideType(domain) {
     // send message
     chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
       var activeTab = tabs[0];
+      var message = activeTab.title;
       chrome.tabs.sendMessage(activeTab.id, {
+        title: message,
         command: 'runCommands',
         data: domain,
       });
