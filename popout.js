@@ -44,15 +44,24 @@ function validateUrl(url) {
 function decideType(domain) {
   if (domain === 'hepsiburada') {
     // send message
-    chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
-      var activeTab = tabs[0];
-      var message = activeTab.title;
-      chrome.tabs.sendMessage(activeTab.id, {
-        title: message,
-        command: 'runCommands',
-        data: domain,
-      });
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+      chrome.tabs.sendMessage(
+        tabs[0].id,
+        { title: tabs[0].title, data: domain },
+        function (response) {
+          console.log('JOBs accepted ', response);
+        }
+      );
     });
+    // chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
+    //   var activeTab = tabs[0];
+    //   var message = activeTab.title;
+    //   chrome.tabs.sendMessage(activeTab.id, {
+    //     title: message,
+    //     command: 'runCommands',
+    //     data: domain,
+    //   });
+    // });
   } else if (domain === 'trendyol') {
     // TODO
     console.log('trendyol');
