@@ -45,13 +45,10 @@ function decideType(domain) {
   if (domain === 'hepsiburada') {
     // send message
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-      chrome.tabs.sendMessage(
-        tabs[0].id,
-        { title: tabs[0].title, data: domain },
-        function (response) {
-          console.log('JOBs accepted ', response);
-        }
-      );
+      chrome.tabs.sendMessage(tabs[0].id, {
+        title: tabs[0].title,
+        data: domain,
+      });
     });
     // chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
     //   var activeTab = tabs[0];

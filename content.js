@@ -1,3 +1,6 @@
+// content.js
+alert('Hello Price Tracker!');
+
 // content script for page interactions
 chrome.runtime.onMessage.addListener(function (request, sender, response) {
   console.log('message-received');
